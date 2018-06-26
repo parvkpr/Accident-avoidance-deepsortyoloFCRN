@@ -2,7 +2,7 @@
 An accident avoidance program that raises alert when nearby vehicles are moving at a relative speed faster than a threshold value, additionally it logs some data onto NEM-Mijin blockchain network
 **Flow**
 The program works in the following few steps:
--1)The video feed is processed frame by frame where depth maps for each frame is produced. 
+*1)The video feed is processed frame by frame where depth maps for each frame is produced. 
 -2)Using deep-sort and YOLO3 tracking algorithm, the vehicles are tracked frame by frame. The bounding box centroid coordinates are used to find the depth of the car.
 -3)The relative change in depth of every vehicle is calculated frame by frame and then divided by FPS(depending on processor speed). This will provide relative velocity of the vehicles
 -4) This relative velocity is used to raise alert (when above a hardcoded threshold value).
