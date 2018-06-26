@@ -20,6 +20,9 @@ from deep_sort.detection import Detection
 from deep_sort.tracker import Tracker
 from tools import generate_detections as gdet
 from deep_sort.detection import Detection as ddet
+import json
+import urllib3
+import requests
 warnings.filterwarnings('ignore')
 
 def create1():
@@ -159,7 +162,14 @@ def main(yolo):
             b = int(yi) 
             f = (his[track.track_id]-pred[0,a,b,0])/fps
             his[track.track_id]=pred[0,a,b,0]
-            print(repr(track.track_id),repr(pred[0,a,b,0])) 
+            '''if(f>10):
+		data = {'data':tracking_id}
+                req = urllib2.Request('http://ip/data')
+                req.add_header('Content-Type', 'application/json')
+                response = urllib2.urlopen(req, json.dumps(data))
+                print('Data logged onto the blockchain')'''
+	
+	    print(repr(track.track_id),repr(pred[0,a,b,0])) 
             print('speed'+repr(track.track_id),repr(f)) 
             #predict.predict('NYU_FCRN.ckpt','/home/kheteshr/Desktop/deep_sort_yolov3-master/in/frame%d.jpg'%(count-1),xi,yi)
             # maina(xi,yi,'/home/kheteshr/Desktop/deep_sort_yolov3-master/in/frame%d.jpg'%(count-1))
