@@ -1,5 +1,6 @@
 # Accident-avoidance-deepsortyoloFCRN
-An accident avoidance program that raises alert when nearby vehicles are moving at a relative speed faster than a threshold value, additionally it logs some data onto NEM-Mijin blockchain network \n
+An accident avoidance program that raises alert when nearby vehicles are moving at a relative speed faster than a threshold value, additionally it logs some data onto NEM-Mijin blockchain network.
+
 **Flow**
 The program works in the following few steps:
 * 1)The video feed is processed frame by frame where depth maps for each frame is produced. 
